@@ -1,18 +1,24 @@
-# Usando o módulo time e a função sleep()para criar
-# un cronômetro de contagem regressiva em Python.
+# Este projeto trata-se da criação de um temporizador
+#Contagem regressiva de tempo para uma dada atividade
 
 import time
-tempo = input('Digite o tempo (em segundos): ')
-if tempo.isdigit():
-    tempo = int(tempo)
+
+tarefa = input('Digite o nome da tarefa: ')
+t = input('Digite o tempo em Segundos: ')
+if t.isdigit():
+    t = int(t)
 else:
-    print('Entrada Inválida')
+    print('Entrada inválida, digite o tempo em segundos')
     quit()
 
+while t != 0:
+    minutes, seconds = divmod(t, 60)
+    timer = '{:02d}:{:02d}'.format(minutes, seconds)
+    print(timer, end='\r')
+    time.sleep(1)
+    t -= 1
 
-while tempo != 0:
-minutes, seconds = divmod(tempo, 60)
-timer = 
+print('TEMPO ESGOTADO!!!')
 
 
 
