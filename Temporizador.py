@@ -2,15 +2,17 @@
 # un cronômetro de contagem regressiva em Python.
 
 import time
+tempo = input('Digite o tempo (em segundos): ')
+if tempo.isdigit():
+    tempo = int(tempo)
+else:
+    print('Entrada Inválida')
+    quit()
 
-def countdown(num_of_secs):
-    while num_of_secs:
-        m,s = divmod(num_of_secs, 60)
-        min_sec_format = '{:02d}:{:02d}'.format(m, s)
-        print(min_sec_format, end='/r')
-        time.sleep(1)
-        num_of_secs -= 1
-    print('tempo finalizado. ')
-inp = input('digite o tempo da atividade: ')
-countdown(inp)
+
+while tempo != 0:
+minutes, seconds = divmod(tempo, 60)
+timer = 
+
+
 
