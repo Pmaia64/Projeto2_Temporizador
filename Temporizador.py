@@ -1,22 +1,23 @@
-# Este projeto trata-se da criação de um temporizador
+# Este projeto trata da criação de um temporizador
 #Contagem regressiva de tempo para uma dada atividade
 
 import time
 
 tarefa = input('Digite o nome da tarefa: ')
-t = input('Digite o tempo em Segundos: ')
-if t.isdigit():
-    t = int(t)
+tempo = input('Digite o tempo em Segundos: ')
+    
+if tempo.isdigit():
+    tempo = int(tempo)
 else:
     print('Entrada inválida, digite o tempo em segundos')
-    quit()
+    quit
 
-while t != 0:
-    minutes, seconds = divmod(t, 60)
+while tempo != 0:
+    minutes, seconds = divmod(tempo, 60)
     timer = '{:02d}:{:02d}'.format(minutes, seconds)
     print(timer, end='\r')
     time.sleep(1)
-    t -= 1
+    tempo -= 1
 
 print('TEMPO ESGOTADO!!!')
 
