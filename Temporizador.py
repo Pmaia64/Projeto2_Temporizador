@@ -3,23 +3,29 @@
 
 import time
 
-tarefa = input('Digite o nome da tarefa: ')
-tempo = input('Digite o tempo em Segundos: ')
-    
-if tempo.isdigit():
-    tempo = int(tempo)
-else:
-    print('Entrada inválida, digite o tempo em segundos')
-    quit
+def leiaInt(msg):
+    ok = False
+    valor = 0
+    while True:
+        t = str(input(msg))
+        if t.isnumeric():
+            valor = int(t)
+            ok = True
+        else:
+            print('\033[0;31mERRO! Digite um número inteiro válido.\033[m')
+        if ok:
+            break
+    return valor
 
-while tempo != 0:
-    minutes, seconds = divmod(tempo, 60)
+t = leiaInt('Digite o tempo em segundos: ')
+
+while t != 0:
+    minutes, seconds = divmod(t, 60)
     timer = '{:02d}:{:02d}'.format(minutes, seconds)
     print(timer, end='\r')
     time.sleep(1)
-    tempo -= 1
+    t -= 1
 
-print('TEMPO ESGOTADO!!!')
-
+print('\033[0;31mTEMPO ESGOTADO!!!\033[m')
 
 
