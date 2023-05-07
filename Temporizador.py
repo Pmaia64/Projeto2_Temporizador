@@ -2,7 +2,7 @@
 #Contagem regressiva de tempo para uma dada atividade
 
 import time
-
+# Bloco de codificação da validação de variável inputada
 def leiaInt(msg):
     ok = False
     valor = 0
@@ -19,6 +19,7 @@ def leiaInt(msg):
 
 t = leiaInt('Digite o tempo em segundos: ')
 
+# Bloco da codificação do temporizador 
 while t != 0:
     minutes, seconds = divmod(t, 60)
     timer = '{:02d}:{:02d}'.format(minutes, seconds)
